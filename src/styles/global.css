@@ -136,3 +136,63 @@ details p { padding-bottom: 1.2rem; color: var(--muted); font-size: .95rem; max-
 .wa-float:hover { background: #1ebe5b; }
 .wa-float svg { width: 24px; height: 24px; }
 @media (max-width: 520px) { .wa-float span { display: none; } .wa-float { padding: .9rem; } }
+
+
+.brands {
+    padding: 48px 0;
+    border-top: 1px solid #ded8cc;
+    border-bottom: 1px solid #ded8cc;
+  }
+  .brands__row p {
+    margin: 0 0 28px;
+    text-align: center;
+    font-size: 14px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  .carousel {
+    overflow: hidden;
+    /* desvanecido en los bordes */
+    mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, #000 10%, #000 90%, transparent);
+  }
+  .carousel__track {
+    display: flex;
+    width: max-content;
+    animation: scroll 60s linear infinite;
+  }
+  .carousel:hover .carousel__track {
+    animation-play-state: paused;
+  }
+  .carousel__list {
+    display: flex;
+    gap: 64px;
+    padding: 0 32px;
+    margin: 0;
+    list-style: none;
+  }
+  .carousel__list li {
+    white-space: nowrap;
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.7;
+  }
+
+  @keyframes scroll {
+    to { transform: translateX(-50%); }
+  }
+
+  /* Respeta a quien prefiere menos movimiento */
+  @media (prefers-reduced-motion: reduce) {
+    .carousel__track {
+      animation: none;
+      width: auto;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+    .carousel__list[aria-hidden="true"] { display: none; }
+    .carousel__list { flex-wrap: wrap; justify-content: center; gap: 24px 40px; }
+  }

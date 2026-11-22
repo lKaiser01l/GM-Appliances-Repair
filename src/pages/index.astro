@@ -7,33 +7,41 @@ const WHATSAPP_LABEL = '+1 (512)773-3739';
 const wa = (msg: string) => `https://wa.me/${WHATSAPP}?text=${encodeURIComponent(msg)}`;
 
 const services = [
-  { title: 'Lavadoras y secadoras', text: 'Fugas, ruidos, ciclos que no terminan.', icon: '<rect x="3" y="2" width="18" height="20" rx="2"/><circle cx="12" cy="13" r="5"/><path d="M7 6h.01M11 6h.01"/>' },
-  { title: 'Refrigeradores', text: 'No enfría, hace ruido o gotea agua.', icon: '<rect x="5" y="2" width="14" height="20" rx="2"/><path d="M5 10h14M9 6v1M9 14v3"/>' },
-  { title: 'Hornos y estufas', text: 'Quemadores, resistencias y termostatos.', icon: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M7 6h.01M11 6h.01"/><rect x="7" y="12" width="10" height="6" rx="1"/>' },
-  { title: 'Lavavajillas', text: 'Drenaje, bombas y cierres de puerta.', icon: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 8h18M7 5.5h.01"/><circle cx="12" cy="14.5" r="3.5"/>' },
-  { title: 'Microondas', text: 'No calienta, chispas o panel sin respuesta.', icon: '<rect x="2" y="5" width="20" height="14" rx="2"/><rect x="5" y="8" width="9" height="8" rx="1"/><path d="M18 9h.01M18 12h.01M18 15h.01"/>' },
-  { title: 'Aire acondicionado', text: 'No enfría, gotea o no enciende.', icon: '<rect x="2" y="4" width="20" height="8" rx="2"/><path d="M6 16v3M12 16v4M18 16v3M6 8h8"/>' },
+  { title: 'Washing machines and dryers', text: 'Leaks, noises, cycles that don’t finish.', icon: '<rect x="3" y="2" width="18" height="20" rx="2"/><circle cx="12" cy="13" r="5"/><path d="M7 6h.01M11 6h.01"/>' },
+  { title: 'Refrigerators', text: "It doesn't cool, makes noise, or leaks water.", icon: '<rect x="5" y="2" width="14" height="20" rx="2"/><path d="M5 10h14M9 6v1M9 14v3"/>' },
+  { title: 'Ovens and stoves', text: 'Burners, heating elements, and thermostats.', icon: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M7 6h.01M11 6h.01"/><rect x="7" y="12" width="10" height="6" rx="1"/>' },
+  { title: 'Dishwasher', text: 'Leaks, noises, and drainage issues.', icon: '<rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 8h18M7 5.5h.01"/><circle cx="12" cy="14.5" r="3.5"/>' },
+  { title: 'Microwave', text: "It doesn't heat, has sparks, or the panel doesn't respond.", icon: '<rect x="2" y="5" width="20" height="14" rx="2"/><rect x="5" y="8" width="9" height="8" rx="1"/><path d="M18 9h.01M18 12h.01M18 15h.01"/>' },
+  { title: 'Air-conditioning', text: "It doesn't cool, it leaks, or it won't turn on.", icon: '<rect x="2" y="4" width="20" height="8" rx="2"/><path d="M6 16v3M12 16v4M18 16v3M6 8h8"/>' },
 ];
 
 const steps = [
-  { title: 'Cuéntanos qué pasa', text: 'Escríbenos o llámanos y describe la falla. Te respondemos el mismo día.' },
-  { title: 'Hacemos el diagnóstico', text: 'Un técnico va a tu casa, revisa el equipo y te da el precio antes de empezar.' },
-  { title: 'Listo para seguir', text: 'Reparamos, probamos que funcione y te dejamos la garantía por escrito.' },
+  { title: 'Tell us what happens', text: 'Write to us or call and describe the issue. We respond the same day.' },
+  { title: 'We do the diagnosis', text: 'A technician comes to your home, checks the appliance and gives you the price before starting.' },
+  { title: 'Ready to proceed', text: 'We fix it, test that it works and leave you with a written guarantee.' },
 ];
 
 const trust = [
-  { title: 'Cuentas claras', text: 'Te decimos el costo antes de tocar el equipo.' },
-  { title: 'Personas a quienes llamar', text: 'Hablas con quien te atendió, no con un buzón.' },
-  { title: 'Cuidamos tu casa', text: 'Protegemos el piso y dejamos todo limpio.' },
+  { title: 'Clear accounts', text: 'We tell you the cost before touching the appliance.' },
+  { title: 'People to call', text: 'You talk to the person who served you, not a voicemail.' },
+  { title: 'We take care of your home', text: 'We protect the floor and leave everything clean.' },
 ];
 
 const faqs = [
-  { q: '¿Cuánto cuesta la visita de diagnóstico?', a: 'Te damos el precio al agendar. Si decides reparar con nosotros, el diagnóstico se descuenta del total.' },
-  { q: '¿Pueden reparar mi electrodoméstico en casa?', a: 'Sí. La mayoría de las reparaciones se hacen en tu casa. Si el equipo requiere taller, te lo explicamos antes.' },
-  { q: '¿Qué pasa si no se puede reparar?', a: 'Te lo decimos con honestidad y solo cobramos la visita. No te vendemos arreglos que no valen la pena.' },
-  { q: '¿Cuánto tarda en llegar el técnico?', a: 'Normalmente entre 24 y 48 horas desde que agendas. Las urgencias se atienden primero.' },
-  { q: '¿Dan garantía por la reparación?', a: 'Sí, cada reparación incluye garantía por escrito sobre el trabajo y los repuestos usados.' },
+  { q: 'How much does the diagnostic visit cost?', a: 'We give you the price when you schedule. If you decide to repair with us, the diagnostic is deducted from the total.' },
+  { q: 'Can you repair my appliance at home?', a: 'Yes. Most repairs are done at your home. If the equipment requires a shop, we will explain it to you beforehand.' },
+  { q: 'What happens if it cannot be repaired?', a: 'We will be honest with you and only charge for the visit. We do not sell repairs that do not make sense.' },
+  { q: 'How long does it take for the technician to arrive?', a: 'Normally between 24 and 48 hours from when you schedule. Urgent cases are prioritized.' },
+  { q: 'Do you provide a warranty for the repair?', a: 'Yes, each repair includes a written warranty on the work and parts used.' },
 ];
+
+const brands = [
+  "SAMSUNG", "LG", "Whirlpool", "BOSCH", "Electrolux", "Amana",
+  "Frigidaire", "Hotpoint", "GE Monogram", "Panasonic", "Kenmore",
+  "Maytag", "Jenn-Air", "Hisense", "U-Line", "Viking", "Miele",
+  "Thor", "Dacor", "Wolf", "Sub-Zero", "Thermador",
+];
+
 ---
 
 <!doctype html>
@@ -41,8 +49,8 @@ const faqs = [
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>AppliancesReapirGM | Reparación de electrodomésticos a domicilio</title>
-    <meta name="description" content="Reparamos lavadoras, refrigeradores, hornos y más. Técnicos verificados, precio claro antes de empezar y garantía por escrito." />
+    <title>Appliance Repair in Austin, TX </title>
+    <meta name="description" content="We repair washing machines, refrigerators, ovens, and more. Verified technicians, clear pricing before we begin, and a written guarantee." />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -52,11 +60,11 @@ const faqs = [
       <div class="wrap header__row">
         <a href="/" class="logo" aria-label="AppliancesReapirGM"><b>GM</b><span>Appliances</span></a>
         <nav class="nav" aria-label="Principal">
-          <a href="#servicios">Servicios</a>
-          <a href="#como-funciona">Cómo funciona</a>
-          <a href="#preguntas">Preguntas</a>
+          <a href="#servicios">Services</a>
+          <a href="#como-funciona">How it works</a>
+          <a href="#preguntas">Questions</a>
         </nav>
-        <a href={wa("Hola, quiero agendar una visita.")} class="btn btn--primary" target="_blank" rel="noopener">Agendar visita</a>
+        <a href={wa("Hello, I would like to schedule a visit.")} class="btn btn--primary" target="_blank" rel="noopener">Schedule Visit</a>
       </div>
     </header>
 
@@ -64,40 +72,48 @@ const faqs = [
       <section class="hero">
         <div class="wrap hero__grid">
           <div class="hero__copy">
-            <span class="pill">Reparación a domicilio</span>
-            <h1>Tu casa no para. Nosotros tampoco.</h1>
-            <p class="lead">Reparamos tus electrodomésticos sin complicaciones: te decimos qué tiene, cuánto cuesta y cuándo queda listo.</p>
+            <span class="pill">In-home repair</span>
+            <h1>Fast and Reliable Appliance Repair and Installation in Austin, Texas</h1>
+            <p class="lead">Home Appliance Repair, Installation & HVAC Air conditioning</p>
             <div class="hero__actions">
-              <a href={wa("Hola, quiero agendar una reparación.")} class="btn btn--primary" target="_blank" rel="noopener">Agendar reparación</a>
-              <a href="#servicios" class="btn btn--ghost">Ver servicios</a>
+              <a href={wa("Hola, quiero agendar una reparación.")} class="btn btn--primary" target="_blank" rel="noopener">Schedule Repair</a>
+              <a href="#servicios" class="btn btn--ghost">View Services</a>
             </div>
             <ul class="hero__checks">
-              <li>Diagnóstico claro</li>
-              <li>Técnicos verificados</li>
-              <li>Garantía escrita</li>
+              <li>Clear Diagnosis</li>
+              <li>Verified Technicians</li>
+              <li>Written Guarantee</li>
             </ul>
           </div>
           <div class="photo">
             <img src="https://community.thriveglobal.com/wp-content/uploads/2021/05/Finding-an-Appliance-Service-Repair-Company-You-Trust.jpg" alt="Técnico revisando una lavadora en una cocina" onerror="this.remove()" />
-            <div class="photo__badge"><i></i>Técnico en camino</div>
+            <div class="photo__badge"><i></i>Verified Technicians</div>
           </div>
         </div>
       </section>
 
       <section class="brands" aria-label="Marcas">
         <div class="wrap brands__row">
-          <p>Reparamos las marcas que ya tienes en casa</p>
-          <ul>
-            <li>SAMSUNG</li><li>LG</li><li>Whirlpool</li><li>BOSCH</li><li>Electrolux</li>
-          </ul>
+          <p>We repair the brands you already have at home</p>
+        </div>
+
+        <div class="carousel">
+          <div class="carousel__track">
+            <ul class="carousel__list">
+              {brands.map((b) => <li>{b}</li>)}
+            </ul>
+            <ul class="carousel__list" aria-hidden="true">
+              {brands.map((b) => <li>{b}</li>)}
+            </ul>
+          </div>
         </div>
       </section>
 
       <section class="section" id="servicios">
         <div class="wrap">
           <div class="split">
-            <h2>Si lo usas a diario, nosotros lo reparamos.</h2>
-            <p class="lead">Atendemos los electrodomésticos que no pueden faltar en tu rutina.</p>
+            <h2>If you use it daily, we’ll repair it.</h2>
+            <p class="lead">We service the home appliances you can't live without.</p>
           </div>
           <div class="services">
             {services.map((s) => (
@@ -113,11 +129,11 @@ const faqs = [
 
       <section class="section section--navy" id="como-funciona">
         <div class="wrap">
-          <h2>Volver a la normalidad, en 3 pasos.</h2>
+          <h2>Getting back to normal, in 3 steps.</h2>
           <div class="steps">
             {steps.map((s, i) => (
               <div class="step">
-                <small>Paso {i + 1}</small>
+                <small>Step {i + 1}</small>
                 <h3>{s.title}</h3>
                 <p>{s.text}</p>
               </div>
@@ -132,7 +148,7 @@ const faqs = [
             <img src="https://oniria.pe/wp-content/uploads/2025/11/2-3.png" alt="Cocina luminosa con electrodomésticos funcionando" onerror="this.remove()" />
           </div>
           <div class="trust__copy">
-            <h2>Reparar bien también es dar tranquilidad.</h2>
+            <h2>Repairing well is also about giving peace of mind.</h2>
             <ul class="trust__list">
               {trust.map((t) => (
                 <li>
@@ -148,9 +164,8 @@ const faqs = [
       <section class="section section--tint" id="preguntas">
         <div class="wrap faq">
           <div class="faq__intro">
-            <h2>Todo claro, desde el inicio.</h2>
-            <p class="lead">Resolvemos las dudas más comunes antes de que agendes.</p>
-            <a href={wa("Hola, tengo una consulta antes de agendar.")} target="_blank" rel="noopener">Hablar con una persona</a>
+            <h2>Everything clear, from the start.</h2>
+            <p class="lead">We solve the most common questions before you schedule an appointment.</p>
           </div>
           <div class="faq__list">
             {faqs.map((f, i) => (
@@ -166,10 +181,10 @@ const faqs = [
       <section class="section section--navy" id="contacto">
         <div class="wrap cta">
           <div>
-            <h2>Tu próxima reparación, sin complicaciones.</h2>
-            <p>Escríbenos por WhatsApp y te confirmamos la visita en minutos.</p>
+            <h2>Your next repair, hassle-free.</h2>
+            <p>Message us on WhatsApp and we'll confirm your visit within minutes.</p>
           </div>
-          <a href={wa("Hola, quiero agendar una reparación.")} class="btn btn--light" target="_blank" rel="noopener">Escribir por WhatsApp</a>
+          <a href={wa("Hola, quiero agendar una reparación.")} class="btn btn--light" target="_blank" rel="noopener">Message on WhatsApp</a>
         </div>
       </section>
     </main>
@@ -179,32 +194,32 @@ const faqs = [
         <div class="footer__grid">
           <div>
             <a href="/" class="logo" aria-label="OHappliances"><b>GM</b><span>appliances</span></a>
-            <p style="margin-top:.75rem;max-width:34ch">Reparación de electrodomésticos a domicilio, con precio claro y garantía.</p>
+            <p style="margin-top:.75rem;max-width:34ch">Home appliance repair, with clear pricing and warranty.</p>
           </div>
           <div>
-            <h4>Servicios</h4>
+            <h4>Services</h4>
             <ul>
-              <li><a href="#servicios">Lavadoras</a></li>
-              <li><a href="#servicios">Refrigeradores</a></li>
-              <li><a href="#servicios">Hornos y estufas</a></li>
+              <li><a href="#servicios">Washing Machines</a></li>
+              <li><a href="#servicios">Refrigerators</a></li>
+              <li><a href="#servicios">Ovens and Stoves</a></li>
             </ul>
           </div>
           <div>
-            <h4>Contacto</h4>
+            <h4>Contact</h4>
             <ul>
               <li><a href={wa("Hola, necesito ayuda.")} target="_blank" rel="noopener">WhatsApp {WHATSAPP_LABEL}</a></li>
-              <li>Lun a Sáb, 8:00 a 18:00</li>
+              <li>Mon to Sat, 8:00 AM to 6:00 PM</li>
             </ul>
           </div>
         </div>
         <div class="footer__legal">
-          <p>© {new Date().getFullYear()} GMappliances. Todos los derechos reservados.</p>
-          <p><a href="#">Privacidad</a> · <a href="#">Términos</a></p>
+          <p>© {new Date().getFullYear()} GMappliances. All rights reserved.</p>
+          <p><a href="#">Privacy</a> · <a href="#">Terms</a></p>
         </div>
       </div>
     </footer>
 
-    <a href={wa("Hola, necesito ayuda con un electrodoméstico.")} class="wa-float" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+    <a href={wa("Hello, I need help with an appliance.")} class="wa-float" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
       <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.47 15.04L2 22l5.1-1.34A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.18-1.14l-.3-.18-3.03.8.81-2.95-.2-.31a8.2 8.2 0 1 1 6.9 3.78Zm4.5-6.14c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.56.13-.16.25-.64.8-.78.97-.14.16-.29.18-.54.06a6.7 6.7 0 0 1-3.3-2.88c-.25-.43.25-.4.72-1.33.08-.16.04-.31-.02-.43-.06-.12-.56-1.35-.77-1.85-.2-.48-.4-.42-.56-.43h-.48c-.16 0-.43.06-.66.31-.23.25-.87.85-.87 2.07s.89 2.4 1.01 2.57c.12.16 1.75 2.67 4.24 3.75 1.58.68 2.2.74 3 .62.49-.07 1.46-.6 1.67-1.17.2-.58.2-1.07.14-1.17-.06-.1-.23-.16-.48-.28Z"/></svg>
       <span>WhatsApp</span>
     </a>
